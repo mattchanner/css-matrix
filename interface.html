@@ -95,7 +95,14 @@
                 <img title="Zoom in" class="zoom-in" src="src/img/in.png" />
                 <img title="Zoom out" class="zoom-out" src="src/img/out.png" />
             </div>
-
+            <div>
+                <img title="Up" class="move-up" src="src/img/up.png" />
+                <img title="Down" class="move-down" src="src/img/down.png" />
+            </div>
+            <div>
+                <img title="Left" class="move-left" src="src/img/left.png" />
+                <img title="Right" class="move-right" src="src/img/right.png" />
+            </div>
             <div class="break"></div>
             <div>
                 <img title="Reset" class="reset" src="src/img/reset.png" />
@@ -147,15 +154,15 @@
             cons.innerHTML += "\nActual CSS: " + image.style.transform;
         });
 
-        //query(".image-container").on("mouseover", function () { query(".container").style.display = ""; });
-        //query(".image-container").on("mouseleave", function () { query(".container").style.display = "none"; });
-        //query(".container").on("mouseover", function () { query(".container").style.display = ""; });
         query(".rotate-clockwise").on("click", function () { transform.rotate({clockwise: true}); });
         query(".rotate-anticlockwise").on("click", function () { transform.rotate({clockwise: false}); });
         query(".zoom-in").on("click", function () { transform.zoomIn(); });
         query(".zoom-out").on("click", function () { transform.zoomOut(); });
-
-
+        
+        query(".move-up").on("click", function () { transform.up(); });
+        query(".move-down").on("click", function () { transform.down(); });
+        query(".move-left").on("click", function () { transform.left(); });
+        query(".move-right").on("click", function () { transform.right(); });
         query(".reset").on("click", function () { transform.reset(); });
 
         $(function () {
